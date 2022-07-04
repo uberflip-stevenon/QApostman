@@ -1,0 +1,2138 @@
+{
+	"info": {
+		"_postman_id": "f157f887-664c-4cfd-90af-b8f8fb2f9b6b",
+		"name": "UberFlip_Basic Functions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20355982"
+	},
+	"item": [
+		{
+			"name": "Hubs",
+			"item": [
+				{
+					"name": "listHubs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/hubs?limit&page&sort",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"hubs"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "Number of results to return\n"
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listStreamsinHubs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/hubs/{hubId}/streams?type&service&limit&page&sort&hidden",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"hubs",
+								"{hubId}",
+								"streams"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "",
+									"description": "Return only results containing the specified text in one or more of the following fields:\n\n\n- name\n- url",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "Return only streams of the specified type (“blogs”, “docs”, “videos”, etc.)"
+								},
+								{
+									"key": "service",
+									"value": null,
+									"description": "Return only streams importing items from the specified service (“blogpost”, “uberflip”, “youtube”, “vimeo”, etc.)"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "Number of results to return"
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "Page to show"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"description": "Sort results by one or more of the following fields:\n\n- id\n- name\n- introduction\n- description\n- stream_count\n- created_at\n- modified_at\n\nNote: Add - before the value to have the response returned in descending/reverse-alphabetical order."
+								},
+								{
+									"key": "hidden",
+									"value": null,
+									"description": "Return only streams that are hidden\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRedirectRulesforHub",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/hubs/{hubId}/redirect-rules?limit&page&enabled&redirect_stage&sort&hidden",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"hubs",
+								"{hubId}",
+								"redirect-rules"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "",
+									"description": "Return only results containing the specified text in one or more of the following fields:\n\n\n- name\n- url",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "enabled",
+									"value": null
+								},
+								{
+									"key": "redirect_stage",
+									"value": null
+								},
+								{
+									"key": "sort",
+									"value": null
+								},
+								{
+									"key": "hidden",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listAssetsinHubs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/hubs/{hubId}/assets?limit&page&sort",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"hubs",
+								"{hubId}",
+								"assets"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": null
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHubs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/hubs/{hubId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"hubs",
+								"{hubId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMetricsForHubs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}/hubs/{hubId}/metrics?from&to",
+							"host": [
+								"{{apiv2URL}"
+							],
+							"path": [
+								"hubs",
+								"{hubId}",
+								"metrics"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": null,
+									"description": "Start date. Time should be “T00:00:00-0000”. Other values will be ignored. If not passed it defaults to one month ago."
+								},
+								{
+									"key": "to",
+									"value": null,
+									"description": "End date. Time should be “T00:00:00-0000”. Other values will be ignored. If not passed it defaults to today."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Streams",
+			"item": [
+				{
+					"name": "listStreams",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/streams?type=blogs&sort=title",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "blogs"
+								},
+								{
+									"key": "service",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "title"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createStream",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hub_id",
+									"value": "122387",
+									"description": "id fo the hub you are trying to create the stream in",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "testBlog_Steven",
+									"description": "title of the stream",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "desc",
+									"description": "desc of the stream",
+									"type": "text"
+								},
+								{
+									"key": "service",
+									"value": "blog",
+									"description": "values: 'blogpost', 'custom', 'targeted' - type of stream you want to create",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}/streams",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStreamsByID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/streams/8709675",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams",
+								"8709675"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStream",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/streams/9546404",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams",
+								"9546404"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHubsforStream",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/streams/9546399/hubs?sort=id",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams",
+								"9546399",
+								"hubs"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "id",
+									"description": "'id', 'name', 'introduction', 'description', 'stream_count', 'created_at', 'modified_at' "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMetricsforStream",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/streams/9546403/metrics",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams",
+								"9546403",
+								"metrics"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": null,
+									"description": "YYYY-MM-DDThh:mm:ss+zzzz",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": null,
+									"description": "YYYY-MM-DDThh:mm:ss+zzzz",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listItemsinStream",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/streams/9546403/items",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams",
+								"9546403",
+								"items"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "",
+									"description": "YYYY-MM-DDThh:mm:ss+zzzz",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStreamItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/streams/{streamId}/items/{itemId}?streamId=&itemID",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams",
+								"{streamId}",
+								"items",
+								"{itemId}"
+							],
+							"query": [
+								{
+									"key": "streamId",
+									"value": "",
+									"description": "YYYY-MM-DDThh:mm:ss+zzzz"
+								},
+								{
+									"key": "itemID",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upsertItemInStream",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ordinal",
+									"value": "",
+									"description": "Integer - The new ordinal of the item in the stream",
+									"type": "text"
+								},
+								{
+									"key": "featured",
+									"value": "",
+									"description": "Boolean-Whether the item is featured\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}/streams/{streamId}/items/{itemId}?streamId=&itemID",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams",
+								"{streamId}",
+								"items",
+								"{itemId}"
+							],
+							"query": [
+								{
+									"key": "streamId",
+									"value": "",
+									"description": "YYYY-MM-DDThh:mm:ss+zzzz"
+								},
+								{
+									"key": "itemID",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteItemFromStream",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/streams/{streamId}/items/{itemId}?streamId=&itemID",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams",
+								"{streamId}",
+								"items",
+								"{itemId}"
+							],
+							"query": [
+								{
+									"key": "streamId",
+									"value": "",
+									"description": "YYYY-MM-DDThh:mm:ss+zzzz"
+								},
+								{
+									"key": "itemID",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMetricsforItemWithinStream",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ordinal",
+									"value": "",
+									"description": "Integer - The new ordinal of the item in the stream",
+									"type": "text"
+								},
+								{
+									"key": "featured",
+									"value": "",
+									"description": "Boolean-Whether the item is featured\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}/streams/{streamId}/items/{itemId}/metrics?streamId=&itemID&from&to",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"streams",
+								"{streamId}",
+								"items",
+								"{itemId}",
+								"metrics"
+							],
+							"query": [
+								{
+									"key": "streamId",
+									"value": "",
+									"description": "The unique identifier of the stream\n"
+								},
+								{
+									"key": "itemID",
+									"value": null,
+									"description": "The unique identifier of the item\n"
+								},
+								{
+									"key": "from",
+									"value": null,
+									"description": "Start date. Time should be “T00:00:00-0000”. Other values will be ignored. If not passed it defaults to one month ago.\n"
+								},
+								{
+									"key": "to",
+									"value": null,
+									"description": "End date. Time should be “T00:00:00-0000”. Other values will be ignored. If not passed it defaults to today.\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Items",
+			"item": [
+				{
+					"name": "listItems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/items?page&sort&query&published&hidden",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"items"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "",
+									"description": "Number of results to return\n",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "Page to show\n"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"description": "ort results by one or more of the following fields:\n\n- id\n- title\n- description\n- author.full_name\n- created_at\n- modified_at\n- published_at\n\nNote: Add - before the value to have the response returned in descending/reverse-alphabetical order."
+								},
+								{
+									"key": "query",
+									"value": null,
+									"description": "Filter results by querying the following fields:\n\n- id\n- title\n- description\n- content"
+								},
+								{
+									"key": "published",
+									"value": null,
+									"description": "Filter results by checking whether the items are published or not\n"
+								},
+								{
+									"key": "hidden",
+									"value": null,
+									"description": "Filter results by checking whether the items are hidden or not\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listTagsonItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/items/{itemId}/tags?page&sort",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"items",
+								"{itemId}",
+								"tags"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "",
+									"description": "Number of results to return\n",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listStreamswithItems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/items/{itemId}/streams?query&type&service&limit&page&sort&hidden",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"items",
+								"{itemId}",
+								"streams"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": null,
+									"description": "Return only results containing the specified text in one or more of the following fields:\n\n\n- name\n- url"
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "Return only streams of the specified type (“blogs”, “docs”, “videos”, etc)"
+								},
+								{
+									"key": "service",
+									"value": null,
+									"description": "Return only streams importing items from the specified service (“blogpost”, “uberflip”, “youtube”, “vimeo”, etc)"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "Number of results to return\n"
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "Page to show\n"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"description": "Sort results by one or more of the following fields:\n\n- id\n- name\n- introduction\n- description\n- stream_count\n- created_at\n- modified_at"
+								},
+								{
+									"key": "hidden",
+									"value": null,
+									"description": "Return only streams that are hidden\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listStreamswithItemsofHub",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/items/{itemId}/hubs/{hubId}/streams?query&type&service&limit&page&sort&hidden",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"items",
+								"{itemId}",
+								"hubs",
+								"{hubId}",
+								"streams"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": null,
+									"description": "Return only results containing the specified text in one or more of the following fields:\n\n\n- name\n- url"
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "Return only streams of the specified type (“blogs”, “docs”, “videos”, etc)"
+								},
+								{
+									"key": "service",
+									"value": null,
+									"description": "Return only streams importing items from the specified service (“blogpost”, “uberflip”, “youtube”, “vimeo”, etc)"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "Number of results to return\n"
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "Page to show\n"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"description": "Sort results by one or more of the following fields:\n\n- id\n- name\n- introduction\n- description\n- stream_count\n- created_at\n- modified_at"
+								},
+								{
+									"key": "hidden",
+									"value": null,
+									"description": "Return only streams that are hidden\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hub_id",
+									"value": "",
+									"description": "req- The ID code that specifies the Hub in which to create the Item.",
+									"type": "text"
+								},
+								{
+									"key": "stream",
+									"value": "",
+									"description": "req -The details of the Stream where the Item will be created.",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "",
+									"description": "req-The title to use for the created Item.",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "A brief description of the created Item.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "content",
+									"value": "",
+									"description": "The body content of the created Item.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "author",
+									"value": "",
+									"description": "The details of the author to whom this Item will be attributed.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "seo_title",
+									"value": "",
+									"description": "The meta tag title to use for the Item.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "seo_description",
+									"value": "",
+									"description": "The meta tag description to use for the Item.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "thumbnail_url",
+									"value": "",
+									"description": "The URL where the thumbnail for the Item is hosted.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "published_at",
+									"value": "",
+									"description": "The date and time to be used for the \"published on\" timestamp for the Item.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "hidden",
+									"value": "",
+									"description": "Whether the Item should be hidden or visible.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "canonical_url",
+									"value": "",
+									"description": "The URL to use as this Item's canonical URL.",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}/items",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"items"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "",
+									"description": "Number of results to return\n",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "query",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "published",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "hidden",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getItems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/items/{itemId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"items",
+								"{itemId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHubsforItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}/items/{itemId}/hubs?query&limit&page&sort",
+							"host": [
+								"{{apiv2URL}"
+							],
+							"path": [
+								"items",
+								"{itemId}",
+								"hubs"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": null,
+									"description": "Return only results containing the specified text in one or more of the following fields:\n\n\n- name\n- url"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "Number of results to return"
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "Page to show"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"description": "Sort results by one or more of the following fields:\n\n- id\n- name\n- introduction\n- description\n- stream_count\n- created_at\n- modified_at"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMetricsForItems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}/items/{itemId}/metrics?from&to",
+							"host": [
+								"{{apiv2URL}"
+							],
+							"path": [
+								"items",
+								"{itemId}",
+								"metrics"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": null,
+									"description": "Start date. Time should be “T00:00:00-0000”. Other values will be ignored. If not passed it defaults to one month ago."
+								},
+								{
+									"key": "to",
+									"value": null,
+									"description": "End date. Time should be “T00:00:00-0000”. Other values will be ignored. If not passed it defaults to today."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTagstoItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/items/{itemId}/tags/{tagId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"items",
+								"{itemId}",
+								"tags",
+								"{tagId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTagsFromItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}//items/{itemId}/tags/{tagId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"",
+								"items",
+								"{itemId}",
+								"tags",
+								"{tagId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateItem - todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hub_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description\t",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}items/{itemId}",
+							"host": [
+								"{{apiv2URL}}items"
+							],
+							"path": [
+								"{itemId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/items/{itemId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"items",
+								"{itemId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "publishItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "published_at",
+									"value": "",
+									"description": "date - The date and time the item was published",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}/items/{itemId}/publish",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"items",
+								"{itemId}",
+								"publish"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userGroups",
+			"item": [
+				{
+					"name": "listUserGroup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/user-groups?name=&limit&page&sort",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"user-groups"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "limit",
+									"value": null
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUsersofUserGroup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/user-groups/{groupId}/users",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"user-groups",
+								"{groupId}",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUsersofUserGroup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/users/{userId}/user-groups/{groupId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"users",
+								"{userId}",
+								"user-groups",
+								"{groupId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserGroup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/user-groups/{groupId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"user-groups",
+								"{groupId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUserGroup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/user-groups",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"user-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserGroup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "The user group name\n",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "The user group description\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}/user-groups/{groupId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"user-groups",
+								"{groupId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserGroup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/user-groups/{groupId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"user-groups",
+								"{groupId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserfromUserGroup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/users/{userId}/user-groups/{groupId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"users",
+								"{userId}",
+								"user-groups",
+								"{groupId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "listTags",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/tags",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"tags"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "",
+									"description": "Return only results containing the specified text in one or more of the following fields:\n\nname\ndescription",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "Number of results to return\n",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"description": "Page to show\n",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "",
+									"description": "ort results by one or more of the following fields:\n\nid\ntag_group_id\nname\ndescripton\nitems_count\ncreated_at\n* modified_at\n\nNote: Add - before the value to have the response returned in descending/reverse-alphabetical order.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTags",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/tags/{tagId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"tags",
+								"{tagId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTags",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/tags",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTags",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}/tags/{tagId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"tags",
+								"{tagId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTags Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/tags/{tagId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"tags",
+								"{tagId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assets",
+			"item": [
+				{
+					"name": "getAssets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiv2URL}}/assets/{assetId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"assets",
+								"{assetId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAssets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hub_id",
+									"value": "",
+									"description": "The hub identifier\n",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "",
+									"description": "The asset URL\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}/assets",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"assets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAssets Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hub_id",
+									"value": "",
+									"description": "The hub identifier\n",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "",
+									"description": "The asset URL\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiv2URL}}/assets/{assetId}",
+							"host": [
+								"{{apiv2URL}}"
+							],
+							"path": [
+								"assets",
+								"{assetId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateAccessToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"authToken\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{apiv2URL}}/authorize?grant_type=client_credentials&client_secret=96cea6611d66896d3bfa7616c449f148923513e9&client_id=e11dd7ae2915e8508ee5973e5a929975",
+					"host": [
+						"{{apiv2URL}}"
+					],
+					"path": [
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						},
+						{
+							"key": "client_secret",
+							"value": "96cea6611d66896d3bfa7616c449f148923513e9"
+						},
+						{
+							"key": "client_id",
+							"value": "e11dd7ae2915e8508ee5973e5a929975",
+							"description": "e11dd7ae2915e8508ee5973e5a929975"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDomain",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiv2URL}}/domains?",
+					"host": [
+						"{{apiv2URL}}"
+					],
+					"path": [
+						"domains"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
